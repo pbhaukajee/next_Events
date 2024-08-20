@@ -7,6 +7,7 @@ import { Fragment } from "react";
 import Button from "@/components/ui/button";
 import ErrorAlert from "@/components/ui/error-alert";
 import { notFound } from "next/navigation";
+import Head from "next/head";
 
 function FilteredEventsPage(props) {
   const router = useRouter();
@@ -26,6 +27,10 @@ function FilteredEventsPage(props) {
   if (props.hasError) {
     return (
       <Fragment>
+        <Head>
+          <title>Filtered Events</title>
+          <meta name="description" />
+        </Head>
         <ErrorAlert>
           {" "}
           <p>Invalid filter. Please adjust your values!</p>
